@@ -28,6 +28,8 @@ const Item = ({id, nombre, precio, img, rate, moneda}) => {
                 </Link>
             </div>
         </div>
+
+        
     </>
     
     
