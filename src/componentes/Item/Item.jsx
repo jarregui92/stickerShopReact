@@ -1,12 +1,12 @@
-import './Item.css';
 import { Link } from 'react-router-dom';
 import Rating from '../Rating/Rating';
 
 const Item = ({ id, nombre, precio, img, rate, moneda }) => {
   return (
+    
     <div className='border-2 rounded-md group overflow-hidden bg-gray-100'>
-      <div className="relative w-full bg-gray-400">
-        <img src={img} alt={nombre} className="object-cover" />
+      <div className=" items-center flex  justify-center bg-gray-400">
+        <img src={img} alt={nombre} />
       </div>
       <div className="p-6" >
         <p className="font-semibold text-lg" >{nombre}</p>

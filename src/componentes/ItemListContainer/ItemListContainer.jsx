@@ -20,7 +20,6 @@ const ItemListContainer = () => {
   }, [idCategoria])
   return (
     <div>
-      <h2> Mis Productos </h2>
       <ItemList productos={productos}/>
     </div>
     
