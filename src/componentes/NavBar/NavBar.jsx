@@ -4,14 +4,13 @@ import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <header className="sticky top-0  z-10 shadow bg-gray-100" >
-    {/* <header className="sticky top-0  z-10 shadow " style={{ backgroundColor: storeConfig.navBarColor }}> */}
-        <div className="container mx-aujto p-6 flex justify-between">
+    <header className="sticky top-0 z-10 shadow bg-gray-100" >
+        <div className="container mx-auto p-6 flex justify-between items-center">
             <Link to="/">
                 <Logo />
             </Link>
             <nav>
-                <ul>
+                <ul className='flex w-full'>
                     <li>
                         <NavLink to="/categoria/free">Free</NavLink>
                     </li>
@@ -19,7 +18,7 @@ const NavBar = () => {
                         <NavLink to="/categoria/premium">Premium</NavLink>
                     </li>
                     <li>
-                        <Link to='/cart' className='flex items-center space-x-1 hover:text-gray-900' >
+                        <Link to='/cart' className='' >
                             <CartWidget />
                         </Link>
                     </li>

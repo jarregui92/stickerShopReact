@@ -1,36 +1,42 @@
 import { useState } from "react";
 
 
-const ItemCount = ({inicial, stock, funcionAgregar }) => {
+const ItemCount = ({ inicial, stock, funcionAgregar }) => {
 
-    const [contador, setContador] = useState(1);
+  const [contador, setContador] = useState(1);
 
 
-    const incrementar = () => {
-      if(contador < stock) {
-        setContador(contador + 1);
-      }
+  const incrementar = () => {
+    if (contador < stock) {
+      setContador(contador + 1);
     }
+  }
 
-    const decrementar = () => {
-      if(contador > inicial) {
-        setContador(contador - 1);
-      }
+  const decrementar = () => {
+    if (contador > inicial) {
+      setContador(contador - 1);
     }
+  }
 
 
   return (
     <>
-    <div>
-        <button onClick={decrementar} type="button" className="px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          -
+      <label className="w-full text-xl font-semibold text-gray-700 dark:text-gray-400">Cantidad</label>
+      <div className="relative flex flex-row w-full h-10 mt-4 bg-transparent rounded-lg">
+        <button onClick={decrementar}
+          className="w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-400">
+          <span className="m-auto text-2xl font-thin">-</span>
         </button>
-        <p> {contador} </p>
-        <button onClick={incrementar} type="button" className="px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          +
+        <p
+          className="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-300 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black"
+          placeholder={contador} >{contador}</p>
+        <button onClick={incrementar}
+          className="w-20 h-full text-gray-600 bg-gray-300 rounded-r outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 dark:bg-gray-900 hover:text-gray-700 hover:bg-gray-400">
+          <span className="m-auto text-2xl font-thin">+</span>
         </button>
-    </div>
-      <button onClick={() => funcionAgregar(contador)}> Agregar al Carrito </button>
+      </div>
+      
+      
     </>
   )
 }
