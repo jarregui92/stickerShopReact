@@ -14,7 +14,10 @@ const Cart = () => {
                
                     <div className="rounded-lg md:w-2/3">
                         {
-                            cantidadTotal === 0 ? <><h2 className="text-lg font-bold">No hay productos en el carrito...</h2> <Link to="/" className="hover:text-blue-600 underline text-xl"> Ver Productos </Link></>: carrito.map(prod => <CartItem key={prod.id} {...prod} />)
+                            cantidadTotal === 0 ? 
+                            <><h2 className="text-lg font-bold">No hay productos en el carrito...</h2> <Link to="/" className="hover:text-blue-600 underline text-xl"> Ver Productos </Link></>
+                            : 
+                            carrito.map((prod, index) => <CartItem key={index} {...prod} />)
                         }
                     </div>
                     <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">

@@ -56,8 +56,9 @@ const ItemDetail = ({ id, nombre, stock, precio, img, rate, moneda }) => {
 
                     {agregarCantidad > 0 ? (
                       <Link to="/cart">
+                        <p className="text-md mb-2 font-bold">Agregado al carrito</p>
                       <button
-                        class="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
+                        className="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
                         Terminar compra
                       </button>
                       </Link>
