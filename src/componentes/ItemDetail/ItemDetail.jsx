@@ -15,7 +15,7 @@ const ItemDetail = ({ id, nombre, stock, precio, img, rate, moneda }) => {
   const manejadorCantidad = (cantidad) => {
     setAgregarCantidad(cantidad);
 
-    const item = { id, nombre, precio };
+    const item = { id, nombre, precio, img, moneda, rate };
     agregarAlCarrito(item, cantidad);
   }
 
@@ -25,10 +25,9 @@ const ItemDetail = ({ id, nombre, stock, precio, img, rate, moneda }) => {
         <div className="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4 md:w-1/2 ">
-              <div className="sticky top-0 z-50 overflow-hidden ">
+              <div className="sticky top-0 overflow-hidden ">
                 <div className="relative mb-6 lg:mb-10 lg:h-2/4 ">
-                  <img src={img} alt=""
-                    className="object-cover w-full lg:h-full " />
+                  <img src={img} alt="" className=" w-full lg:h-full " />
                 </div>
               </div>
             </div>
@@ -47,30 +46,38 @@ const ItemDetail = ({ id, nombre, stock, precio, img, rate, moneda }) => {
                   <p className="inline-block mb-8 text-4xl font-bold text-gray-700 dark:text-gray-400 ">
                     <span>{moneda}</span> <span>${precio}</span>
                   </p>
-                  <p className="text-green-600 dark:text-green-300 ">En stock {stock}</p>
+                  {stock > 0 ? <p className="text-green-600 dark:text-green-300 ">En stock {stock}</p> : <p className="text-red-600 dark:text-red-300 line-through text-lg font-semibold">Sin stock</p>}
                 </div>
 
+                <div className="w-full mb-8 ">
+                  <div className="w-full mb-8">
 
-                <div className="w-32 mb-8 ">
-                  {agregarCantidad > 0 ? (<Link to="/cart"> Terminar compra</Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />)}
-                </div>
-                <div className="flex flex-wrap items-center -mx-4 ">
-                  <div className="w-full px-4 mb-4 lg:w-1/2 lg:mb-0">
-                    <button
-                      onClick={() => manejadorCantidad(contador)} // Usar manejadorCantidad en lugar de funcionAgregar
-                      className="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300"
-                    >
-                      Agregar al Carrito
-                    </button>
-                  </div>
-                  <div className="w-full px-4 mb-4 lg:mb-0 lg:w-1/2">
-                    <Link to="/">
+
+
+                    {agregarCantidad > 0 ? (
+                      <Link to="/cart">
                       <button
-                        className="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
-                        Seguir Comprando
+                        class="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
+                        Terminar compra
                       </button>
-                    </Link>
+                      </Link>
+                    ) : (
+                      stock == 0 ? (
+                       <>
+                        <p className="text-md mb-2 font-bold">No hay stock disponible</p>
+                        <Link to="/">
+                        <button
+                          className="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
+                          Seguir Comprando
+                        </button>
+                        </Link>
+                        </>
+                      ) : (
+                        <ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />
+                      )
+                    )}
                   </div>
+
                 </div>
               </div>
             </div>

@@ -3,30 +3,33 @@ import Logo from '../Logo/Logo'
 import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
-  return (
-    <header className="sticky top-0 z-10 shadow bg-gray-100" >
-        <div className="container mx-auto p-6 flex justify-between items-center">
-            <Link to="/">
-                <Logo />
-            </Link>
-            <nav>
-                <ul className='flex w-full'>
-                    <li>
-                        <NavLink to="/categoria/free">Free</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/categoria/premium">Premium</NavLink>
-                    </li>
-                    <li>
-                        <Link to='/cart' className='' >
-                            <CartWidget />
-                        </Link>
-                    </li>
-                </ul>
+    return (
+        <header className="sticky top-0 z-10 shadow bg-gray-100" >
+            <nav className="bg-white border-gray-200 dark:bg-gray-900">
+                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <Link to="/">
+                        <Logo />
+                    </Link>
+                    <div className="" id="navbar-default">
+                        <ul className="font-medium flex border-gray-100 rounded-lg flex-row space-x-8 rtl:space-x-reverse mt-0 border-0  dark:border-gray-700">
+                            <li>
+                                <NavLink to="/categoria/free">Free</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/categoria/premium">Premium</NavLink>
+                            </li>
+                            <li>
+                                <Link to='/cart' className='flex' >
+                                    <CartWidget />
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
-        </div>
-    </header>
-  )
+        </header>
+    )
 }
 
 export default NavBar
+
