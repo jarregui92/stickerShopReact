@@ -1,5 +1,5 @@
 const productos = [
-    { id: '1', nombre: "Spacial Cat", precio: '2.00', moneda: "USD", img: "https://image.lexica.art/full_jpg/3878f953-ae01-4ab5-a0ff-65a39d212dc8",rate: 5, idcat: "premium", stock:"0"},
+    { id: '1', nombre: "Spacial Cat", precio: '2.00', moneda: "USD", img: "https://image.lexica.art/full_jpg/3878f953-ae01-4ab5-a0ff-65a39d212dc8",rate: 1, idcat: "premium", stock:"0"},
     { id: '2', nombre: "Spacial Cat v2", precio: '2.00', moneda: "USD", img: "https://image.lexica.art/full_jpg/9d81c714-3620-4955-8171-373a96e24917",rate: 4, idcat: "premium", stock:"3"},
     { id: '3', nombre: "Spacial Cat v3", precio: '2.00', moneda: "USD", img: "https://image.lexica.art/full_jpg/86ae7884-fc17-4e67-818e-8513e1464f1c",rate: 3, idcat: "premium", stock:"1"},
     { id: '4', nombre: "Cat", precio: '0.00', moneda: "USD", img: "https://image.lexica.art/full_jpg/55c9393a-dff1-4088-b7e1-9a725a0b4335",rate: 3, idcat: "free", stock:"1"},
