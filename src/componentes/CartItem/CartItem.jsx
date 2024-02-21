@@ -1,11 +1,14 @@
 import React from 'react'
+import {TrashIcon} from "@heroicons/react/24/solid"
 import Rating from '../Rating/Rating'
+import { CarritoContext } from "../../context/CarritoContext";
+import { useContext } from "react";
 
 import './CartItem.css'
 
-const CartItem = ({ item, cantidad, stock }) => {
-
-  console.log(item)
+const CartItem = ({ item, cantidad }) => {
+  const { eliminarProducto } = useContext(CarritoContext);
+  console.log(cantidad)
   return (
     <div>
       < div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
@@ -18,15 +21,13 @@ const CartItem = ({ item, cantidad, stock }) => {
           </div>
           <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
             <div className="flex items-center border-gray-100">
-              <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
-              <p className="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value={cantidad} min="1" />
-              <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
+              <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50" > - </span>
+              <p className="h-8 w-8 border  bg-white text-center text-black pt-1 outline-none" type="number"  min="1" max={item.stock} >{cantidad}</p>
+              <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" > + </span>
             </div>
             <div className="flex items-center space-x-4">
               <p className="text-sm">{item.moneda} {item.precio}</p>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
-                <path  d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <TrashIcon  className="w-6 h-6 flex-shrink-0 text-gray-400 hover:text-red-400 cursor-pointer" onClick={() => eliminarProducto(item.id)}/>
             </div>
           </div>
         </div>

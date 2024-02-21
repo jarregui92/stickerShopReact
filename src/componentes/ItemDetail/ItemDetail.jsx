@@ -15,7 +15,7 @@ const ItemDetail = ({ id, nombre, stock, precio, img, rate, moneda }) => {
   const manejadorCantidad = (cantidad) => {
     setAgregarCantidad(cantidad);
 
-    const item = { id, nombre, precio, img, moneda, rate };
+    const item = { id, nombre, precio, img, moneda, rate, stock };
     agregarAlCarrito(item, cantidad);
   }
 

@@ -22,8 +22,6 @@ export const CarritoProvider = ({ children }) => {
 
         if (!productoExistente) {
             setCarrito(prev => [...prev, { item, cantidad }]);
-            setCantidadTotal(prev => prev + cantidad);
-            setTotal(prev => prev + (item.precio * cantidad))
         } else {
             const carritoActualizado = carrito.map(prod => {
                 if (prod.item.id === item.id) {
@@ -33,9 +31,9 @@ export const CarritoProvider = ({ children }) => {
                 }
             })
             setCarrito(carritoActualizado);
-            setCantidadTotal(prev => prev + cantidad);
-            setTotal(prev => prev + (item.precio * cantidad))
         }
+        setCantidadTotal(prev => prev + cantidad);
+        setTotal(prev => prev + (item.precio * cantidad))
     }
 
     //Función para eliminar productos del carrito: 
@@ -49,7 +47,7 @@ export const CarritoProvider = ({ children }) => {
         setTotal(prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad));
     }
 
-    //Función para vaciar el carrito de compras: 
+    //Función para vaciar el carrito de compras:  
     const vaciarCarrito = () => {
         setCarrito([]);
         setTotal(0);
