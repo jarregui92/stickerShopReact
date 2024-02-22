@@ -1,5 +1,5 @@
 import React from 'react'
-import {TrashIcon} from "@heroicons/react/24/solid"
+import {TrashIcon} from "@heroicons/react/24/outline"
 import Rating from '../Rating/Rating'
 import { CarritoContext } from "../../context/CarritoContext";
 import { useContext } from "react";
@@ -8,7 +8,6 @@ import './CartItem.css'
 
 const CartItem = ({ item, cantidad }) => {
   const { eliminarProducto } = useContext(CarritoContext);
-  console.log(cantidad)
   return (
     <div>
       < div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
