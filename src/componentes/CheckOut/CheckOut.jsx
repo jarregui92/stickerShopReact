@@ -13,14 +13,14 @@ const CheckOut = () => {
 
     const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
 
-    const [nombre, setNombre] = useState('J');
-    const [telefono, setTelefono] = useState('1');
-    const [correo, setCorreo] = useState('jarregui92@gmail.com');
-    const [correoConfirmacion, setCorreoConfirmacion] = useState('jarregui92@gmail.com');
-    const [direccion, setDireccion] = useState('2');
-    const [ciudad, setCiudad] = useState('2');
-    const [codigoPostal, setCodigoPostal] = useState('2');
-    const [comentario, setComentario] = useState('2');
+    const [nombre, setNombre] = useState('');
+    const [telefono, setTelefono] = useState('');
+    const [correo, setCorreo] = useState('');
+    const [correoConfirmacion, setCorreoConfirmacion] = useState('');
+    const [direccion, setDireccion] = useState('');
+    const [ciudad, setCiudad] = useState('');
+    const [codigoPostal, setCodigoPostal] = useState('');
+    const [comentario, setComentario] = useState('');
     const [ordenId, setOrdenId] = useState('');
     const [error, setError] = useState('');
 
