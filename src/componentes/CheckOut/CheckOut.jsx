@@ -24,7 +24,7 @@ const CheckOut = () => {
     const [ordenId, setOrdenId] = useState('');
     const [error, setError] = useState('');
 
-    const notify = () => toast.success(`Gracias por su compra, tu numero de orden es el siguiente:   ${ordenId}, ---> Click para copiar a portapapeles!`, {
+    const notify = () => toast.success(`Gracias por su compra, tu numero de orden es el siguiente:   ${ordenId},       Click para copiar a portapapeles!`, {
         position: "top-center",
         autoClose: false,
         hideProgressBar: true,
