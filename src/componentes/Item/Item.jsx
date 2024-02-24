@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Rating from '../Rating/Rating';
 
-const Item = ({ id, nombre, precio, img, rate, moneda }) => {
+const Item = ({ id, nombre, precio, img, rate, moneda, stock }) => {
   return (
     
     <div className='border-2 rounded-md group overflow-hidden bg-gray-100'>
@@ -11,10 +11,12 @@ const Item = ({ id, nombre, precio, img, rate, moneda }) => {
       <div className="p-6" >
         <p className="font-semibold text-lg" >{nombre}</p>
         <Rating rate={rate} />
-        <div className="mt-4 flex items-center justify-between space-x-2">
+          <div className='mt-4 '>
+            <p className='font-semibold'>Stock:  <span className="text-green-500" >{stock}</span></p>
+          </div>
+        <div className="flex flex-row items-center justify-between space-x-2">
           <div>
-            <p className="text-gray-500" >Price</p>
-            <p className="text-lg font-semibold" ><span >{moneda}</span> {precio}</p>
+          <p className='font-semibold'>Precio:  <span className="text-green-500" >{moneda}  {precio}</span></p>
           </div>
           <Link to={`/item/${id}`}>
             <button className="border rounded-lg py-1 px-4 hover:bg-green-500 hover:text-white">
