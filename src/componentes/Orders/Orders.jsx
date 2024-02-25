@@ -78,7 +78,7 @@ const Orders = () => {
                 <>
 
                     <div className="h-screen grid grid-cols-4">
-                        <div className="lg:col-span-3 col-span-3 bg-indigo-50 space-y-8 px-12">
+                        <div className="lg:col-span-3 col-span-4 bg-indigo-50 space-y-8 px-12">
                             <Notice classColor="text-green-500" title="Exitoso -" msg="Encontramos tu orden." />
                             <div className="rounded-md">
                                 <form >
