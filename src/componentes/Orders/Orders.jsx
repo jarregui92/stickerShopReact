@@ -144,7 +144,7 @@ const Orders = () => {
                             </div>
                             <div className="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
                                 <span>Total</span>
-                                <span>USD {(orden.total + constoEnvio) }</span>
+                                <span className="font-semibold text-pink-500">USD {(orden.total + constoEnvio) }</span>
                             </div>
                         </div>
                     </div>

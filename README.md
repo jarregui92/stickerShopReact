@@ -37,7 +37,9 @@
 <!-- ABOUT THE PROJECT -->
 ## Acerca de StickerShop
 
-![Imagen del Proyecto en funcionamiento][product-screenshot]
+<div align="center">
+<img src="./public/images/captura_index.png" width="400" />
+</div>
 
 StickerShop es un proyecto de eCommerce de stickers creados por inteligencia artificial. Este proyecto es parte de mi curso de React Js en Coderhouse y representa mi proyecto final.
 
@@ -49,18 +51,35 @@ Nuestros stickers son generados por algoritmos de inteligencia artificial, lo qu
 
 ¡Gracias por apoyar!
 
-<p align="right">(<a href="#readme-top">Ir Arriba ⬆️</a>)</p>
-
+<p align="right"><a href="#readme-top">Ir Arriba ⬆️</a></p>
 
 
 ### Construido Con
 
-* [![React][React.js]][React-url]
+- [![React.js]][React-url]
+- [![Firebase]][Firebase-url]
 
-<p align="right">(<a href="#readme-top">Ir Arriba ⬆️</a>)</p>
+<p align="right"><a href="#readme-top">Ir Arriba ⬆️</a></p>
 
+## Características Actuales
 
+El sistema actualmente soporta las siguientes funcionalidades:
 
+- 🟩 Listado de Articulos
+- 🟩 Filtro por Categorias
+- 🟩 Detalle de Articulo
+- 🟩 Trackeo de Pedidos por Nro Orden
+- 🟩 Carrito de compras
+
+## Futuras Actualizaciones
+
+Estamos trabajando en las siguientes mejoras y funcionalidades:
+
+- 🟨 Implementación de LocalStorage para guardar el carrito
+- 🟨 Mejoras en la interfaz de usuario para dispositivos móviles
+- 🟨 Añadir soporte multilenguaje
+- 🟨 Añadir dashboard para administrar la web
+- 🟨 Implementar 
 
 <!-- CONTACT -->
 ## Contacto
@@ -69,13 +88,15 @@ Instagram - [Julian Arregui](https://instagram.com/jarregui92)
 
 Linkedin - [Julian Arregui](https://www.linkedin.com/in/jarregui92/)
 
-Project Link: [https://github.com/jarregui92/stickerShopReact](https://github.com/jarregui92/stickerShopReact)
+Version Prueba: [https://stickershop.jarregui.uy/](https://stickershop.jarregui.uy/)
 
-<p align="right">(<a href="#readme-top">Ir Arriba ⬆️</a>)</p>
+<p align="right"><a href="#readme-top">Ir Arriba ⬆️</a></p>
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: ./public/images/Captura.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[Firebase]: https://img.shields.io/badge/Firebase-20232A?style=for-the-badge&logo=firebase&logoColor=yellow
 [React-url]: https://reactjs.org/
+[Firebase-url]: https://firebase.google.com/
