@@ -79,7 +79,7 @@ Estamos trabajando en las siguientes mejoras y funcionalidades:
 - 🟨 Mejoras en la interfaz de usuario para dispositivos móviles
 - 🟨 Añadir soporte multilenguaje
 - 🟨 Añadir dashboard para administrar la web
-- 🟨 Implementar 
+
 
 <!-- CONTACT -->
 ## Contacto
@@ -91,8 +91,6 @@ Linkedin - [Julian Arregui](https://www.linkedin.com/in/jarregui92/)
 Version Prueba: [https://stickershop.jarregui.uy/](https://stickershop.jarregui.uy/)
 
 <p align="right"><a href="#readme-top">Ir Arriba ⬆️</a></p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: ./public/images/Captura.png
