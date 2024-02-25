@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDrUqVPza4sejwpBtBliSFXKf5nVjBZnk4",
-  authDomain: "stickershop-62615.firebaseapp.com",
-  projectId: "stickershop-62615",
-  storageBucket: "stickershop-62615.appspot.com",
-  messagingSenderId: "386791402821",
-  appId: "1:386791402821:web:72714311078baa9872e22c"
+  apiKey: import.meta.env.VITE_API_KEY_FIREBASE_CONFIG,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN_FIREBASE_CONFIG,
+  projectId: import.meta.env.VITE_PROJECT_ID_FIREBASE_CONFIG,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET_FIREBASE_CONFIG,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID_FIREBASE_CONFIG,
+  appId: import.meta.env.VITE_APP_ID_FIREBASE_CONFIG
 };
 
 // Initialize Firebase
