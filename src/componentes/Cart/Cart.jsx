@@ -25,7 +25,9 @@ const Cart = () => {
                         <>
                             <div className="rounded-lg md:w-2/3">
                                 {carrito.map((prod, index) => <CartItem key={index} {...prod} />)}
+                                
                             </ div>
+                            
                             <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
                                 <div className="mb-2 flex justify-between">
                                     <p className="text-gray-700">Productos</p>
@@ -39,15 +41,15 @@ const Cart = () => {
                                         <p className="mb-1 text-lg font-bold">${total} USD</p>
                                     </div>
                                 </div>
-                                <Link to="/checkout" > <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Pagar</button> </Link>
+                                <Link to="/checkout" > <button className="mt-6 w-full rounded-md bg-pink-300 py-1.5 font-medium text-white hover:bg-pink-400">Pagar</button> </Link>
                                 <div className="flex-row">
-                                    <button className="mt-6 w-full rounded-md bg-red-500 py-1.5 font-medium text-blue-50 hover:bg-red-600" onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
                                     <Link to="/">
                                         <button
-                                            className="mt-6 flex items-center justify-center w-full py-1.5 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
+                                            className="mt-6 flex items-center justify-center w-full py-1.5 text-pink-600 border border-pink-600 rounded-md dark:text-white dark:border-pink-400 hover:bg-pink-400 hover:border-pink-400 hover:text-white dark:bg-pink-400 dark:hover:bg-pink-500 dark:hover:border-pink-500 dark:hover:text-white">
                                             Seguir Comprando
                                         </button>
                                     </Link>
+                                    <button className="mt-6 w-full rounded-md bg-gray-300 py-1.5 font-medium text-black hover:text-white hover:bg-gray-400" onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
                                 </div>
                             </div>
                         </>
