@@ -6,7 +6,7 @@ const NavBar = () => {
     return (
         <header className="sticky top-0 z-10 shadow bg-gray-100" >
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <div className="w-screen-xl flex flex-wrap items-center justify-evenly sm:justify-center sm:items-center md:justify-around mx-auto p-4 px-10">
                     <Link to="/">
                         <Logo />
                     </Link>
