@@ -24,6 +24,8 @@ const CheckOut = () => {
     const [ordenId, setOrdenId] = useState('');
     const [error, setError] = useState('');
 
+
+
     const notify = () => toast.success(`Gracias por su compra, tu numero de orden es el siguiente:   ${ordenId},       Click para copiar a portapapeles!`, {
         position: "top-center",
         autoClose: false,
@@ -78,6 +80,8 @@ const CheckOut = () => {
                 id: producto.item.id,
                 nombre: producto.item.nombre,
                 cantidad: producto.cantidad,
+                img: producto.item.img,
+                unitPrice: producto.item.precio,
             })),
             total,
             fecha: new Date(),
@@ -141,18 +145,17 @@ const CheckOut = () => {
                             </>
                             :
                             <>
-                                <Notice classColor="text-yellow-500" title="Checkout" msg="Complete sus detalles de envío y pago a continuación." />
+                                <Notice classColor="text-yellow-500" title="Check-Out" msg="Información de envío y facturación." />
                                 <form onSubmit={manejadorSubmit}>
                                     <div className="rounded-md">
                                         <section>
-                                            <h2 className="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Información de envío y facturación.</h2>
                                             <fieldset className="mb-3 bg-white shadow-lg rounded text-gray-600">
                                                 <label htmlFor="nombre" className="flex border-b border-gray-200 h-12 py-3 items-center">
                                                     <span className="text-right px-2">Nombre</span>
                                                     <input name="nombre" className="focus:outline-none px-3 flex-grow" placeholder="Try Odinsson" required="" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
                                                 </label>
                                                 <label htmlFor="telefono" className="flex border-b border-gray-200 h-12 py-3 items-center">
-                                                    <span className="text-right px-2">Telefono</span>
+                                                    <span className="text-right px-2">Teléfono</span>
                                                     <input name="telefono" type="text" className="focus:outline-none px-3 flex-grow" placeholder="+598 99 999 999" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
                                                 </label>
                                                 <label htmlFor="correo" className="flex border-b border-gray-200 h-12 py-3 items-center">
@@ -164,7 +167,7 @@ const CheckOut = () => {
                                                     <input name="correoConfirmacion" type="email" className="focus:outline-none px-3 flex-grow" placeholder="ejemplo@ejemplo.com.uy" value={correoConfirmacion} onChange={(e) => setCorreoConfirmacion(e.target.value)} />
                                                 </label>
                                                 <label htmlFor="direccion" className="flex border-b border-gray-200 h-12 py-3 items-center">
-                                                    <span className="text-right px-2">Direccion Envio</span>
+                                                    <span className="text-right px-2">Dirección Envío</span>
                                                     <input name="direccion" type="text" className="focus:outline-none px-3 flex-grow" placeholder="Calle 19 apto 999" value={direccion} onChange={(e) => setDireccion(e.target.value)} />
                                                 </label>
                                                 <label htmlFor="ciudad" className="flex border-b border-gray-200 h-12 py-3 items-center">
@@ -189,7 +192,7 @@ const CheckOut = () => {
 
                                     <button type="submit" className=" px-4 py-3 mt-4 rounded-full bg-pink-400 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
                                         <div className="flex flex-col">
-                                            <span>Total: USD ${total}</span>
+                                            <span>Total: USD {total}</span>
                                             <span className="font-semibold">( {cantidadTotal > 1 ? cantidadTotal + ' Stickers' : cantidadTotal + ' Sticker'} )</span>
                                         </div>
                                     </button>

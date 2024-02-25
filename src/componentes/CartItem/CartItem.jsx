@@ -4,7 +4,6 @@ import Rating from '../Rating/Rating'
 import { CarritoContext } from "../../context/CarritoContext";
 import { useContext } from "react";
 
-import './CartItem.css'
 
 const CartItem = ({ item, cantidad }) => {
   const { eliminarProducto } = useContext(CarritoContext);
