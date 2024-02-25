@@ -11,7 +11,7 @@ const NavBar = () => {
                         <Logo />
                     </Link>
                     <div className="" id="navbar-default">
-                        <ul className="font-medium flex border-gray-100 rounded-lg flex-row space-x-8 rtl:space-x-reverse mt-0 border-0  dark:border-gray-700">
+                        <ul className="font-medium flex border-gray-100 rounded-lg flex-row space-x-8 rtl:space-x-reverse mt-0 border-0  dark:text-white dark:border-gray-700">
                             <li>
                                 <NavLink to="/categoria/free">Free</NavLink>
                             </li>
