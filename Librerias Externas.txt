@@ -1,0 +1,15 @@
+Libreria: HeroIcons 
+Link: https://www.npmjs.com/package/@heroicons/react
+Motivo de uso: La utilice para agregar los iconos a la pagina, carrito, papelera, estrellas, etc.
+
+Libreria: Clipboard-copy
+Link: https://www.npmjs.com/package/clipboard-copy
+Motivo de uso: Esta libreria la utilice para cuando se genera la orden y sale la alerta de "Pedido Realizado" la persona con un click pueda obtener el numero de la orden en el portapapeles.
+
+Libreria: Firebase
+Link: https://www.npmjs.com/package/firebase
+Motivo de uso: Simplemente para guardar la informacion y obtener los datos desde alli.
+
+Libreria: Toastify
+Link: https://www.npmjs.com/package/react-toastify
+Motivo de uso:  La use para las notificaciones
