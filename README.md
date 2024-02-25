@@ -89,6 +89,7 @@ Instagram - [Julian Arregui](https://instagram.com/jarregui92)
 Linkedin - [Julian Arregui](https://www.linkedin.com/in/jarregui92/)
 
 Version Prueba: [https://stickershop.jarregui.uy/](https://stickershop.jarregui.uy/)
+
 Version Prueba Vercel: [https://sticker-shop-react.vercel.app/](https://sticker-shop-react.vercel.app/)
 
 <p align="right"><a href="#readme-top">Ir Arriba ⬆️</a></p>
