@@ -5,7 +5,6 @@ import { useContext } from 'react'
 const CartWidget = () => {
 
   const {cantidadTotal, total } = useContext(CarritoContext)
-  console.log(cantidadTotal , total)
   return (
     <div className='flex pr-4'>
       <div className=''>
