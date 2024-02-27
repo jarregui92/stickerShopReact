@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 
 const Register = () => {
-
+  const navigate = useNavigate();
   const auth = useAuth();
 
   const [email, setEmail] = useState("");
@@ -14,12 +14,15 @@ const Register = () => {
 
   const notifySuccess = () => toast.success("¡Registro exitoso!");
   const notifyError = () => toast.error("Error: Los correos o contraseñas no coinciden!");
+  const notifyMailTaken = () => toast.error("Error: El correo electrónico ya está en uso.");
+  const notifyPasswordMinChar = () => toast.error("Error: La contraseña tiene que tener al menos 6 caracteres!");
+  const notifyRegisterRefuse = () => toast.error("Error: Error al registrar usuario!");
 
   const handleRegister = (e) => {
     e.preventDefault();
 
     if (email === reEmail && password === rePassword) {
-      registerUser();
+      password.length > 5 ? registerUser() : notifyPasswordMinChar();
     } else {
       notifyError();
     }
@@ -27,20 +30,25 @@ const Register = () => {
 
   const registerUser = async () => {
     try {
-      await auth.register(email, password);
+      const res = await auth.register(email, password);
       notifySuccess();
-      
-      setEmail("");
-      setReEmail("");
-      setPassword("");
-      setRePassword("");
-      
+
+      setEmail('');
+      setReEmail('');
+      setPassword('');
+      setRePassword('');
+
+      navigate('/');
     } catch (error) {
-      notifyError();
+      if (error.code === 'auth/email-already-in-use') {
+        notifyMailTaken();
+      } else {
+        notifyRegisterRefuse();
+      }
     }
   };
 
-  
+
 
   return (
     <section className="bg-white dark:bg-gray-900">
@@ -64,7 +72,7 @@ const Register = () => {
             </span>
 
             <input onChange={(e) => setEmail(e.target.value)} type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 
-            focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Correo Electronico" required autoComplete="email" />
+            focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Correo Electronico" required autoComplete="email" value={email} />
           </div>
 
           <div className="relative flex items-center mt-6">
@@ -75,7 +83,7 @@ const Register = () => {
             </span>
 
             <input onChange={(e) => setReEmail(e.target.value)} type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 
-            focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Confirmar Correo Electronico" required autoComplete="email" />
+            focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Confirmar Correo Electronico" required autoComplete="email" value={reEmail} />
           </div>
 
           <div className="relative flex items-center mt-6">
@@ -87,7 +95,7 @@ const Register = () => {
             </span>
 
             <input onChange={(e) => setPassword(e.target.value)} type="password" className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 
-            focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password" autoComplete="new-password" required />
+            focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password" autoComplete="new-password" required value={password} />
           </div>
 
           <div className="relative flex items-center mt-4">
@@ -98,7 +106,7 @@ const Register = () => {
             </span>
 
             <input onChange={(e) => setRePassword(e.target.value)} type="password" className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 
-            focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Confirm Password" autoComplete="new-password" required />
+            focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Confirm Password" autoComplete="new-password" required value={rePassword} />
           </div>
 
           <div className="mt-6">
