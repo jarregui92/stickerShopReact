@@ -1,8 +1,16 @@
 import CartWidget from '../CartWidget/CartWidget';
 import Logo from '../Logo/Logo'
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from '../../context/AuthContext';
+import { ArrowRightEndOnRectangleIcon } from '@heroicons/react/24/solid';
 
 const NavBar = () => {
+
+    const auth = useAuth();
+    const { displayName = null, email } = auth.user || {};
+
+    const handleLogout = () => {  auth.logout() };  
+
     return (
         <header className="sticky top-0 z-10 shadow bg-gray-100" >
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -26,6 +34,7 @@ const NavBar = () => {
                                     <CartWidget />
                                 </Link>
                             </li>
+                            {displayName ? (<li className="flex gap-4"> {displayName}<ArrowRightEndOnRectangleIcon onClick={() => handleLogout()} className="w-7 h-7 cursor-pointer"/></li>) : email ? (<li className="flex gap-4"> {email}<ArrowRightEndOnRectangleIcon onClick={() => handleLogout()} className="w-7 h-7 cursor-pointer"/></li>) : (<NavLink to="/login">Ingresar</NavLink>)}
                         </ul>
                     </div>
                 </div>

@@ -2,7 +2,6 @@ import React from 'react'
 import Rating from '../Rating/Rating'
 
 const CartItemTracking = ({ item}) => {
-    console.log(item)
     return (
             <li className="grid grid-cols-6 gap-2 border-b-1">
                 <div className="col-span-1 self-center">
