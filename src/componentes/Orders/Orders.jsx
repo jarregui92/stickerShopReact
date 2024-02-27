@@ -8,7 +8,6 @@ import CartItemTracking from '../CartItemTracking/CartItemTracking';
 
 const Orders = () => {
 
-    const [constoEnvio, setCostoEnvio] = useState(5);
     const [nroOrden, setNroOrden] = useState('');
     const [compra, setCompra] = useState(0);
     const [orden, setOrden] = useState(0);
@@ -139,12 +138,12 @@ const Orders = () => {
                                 </div>
                                 <div className="flex justify-between py-4 text-gray-600">
                                     <span>Costos de Envio</span>
-                                    <span className="font-semibold text-pink-500">USD {constoEnvio}</span>
+                                    <span className="font-semibold text-pink-500">USD {orden.costoEnvio}</span>
                                 </div>
                             </div>
                             <div className="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
                                 <span>Total</span>
-                                <span className="font-semibold text-pink-500">USD {(orden.total + constoEnvio) }</span>
+                                <span className="font-semibold text-pink-500">USD {(orden.total + orden.costoEnvio) }</span>
                             </div>
                         </div>
                     </div>
