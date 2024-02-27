@@ -70,12 +70,12 @@ El sistema actualmente soporta las siguientes funcionalidades:
 - 🟩 Detalle de Articulo
 - 🟩 Trackeo de Pedidos por Nro Orden
 - 🟩 Carrito de compras
+- 🟩 Implementación de LocalStorage para guardar el carrito, total y cantidad
 
 ## Futuras Actualizaciones
 
 Estamos trabajando en las siguientes mejoras y funcionalidades:
 
-- 🟨 Implementación de LocalStorage para guardar el carrito
 - 🟨 Mejoras en la interfaz de usuario para dispositivos móviles
 - 🟨 Añadir soporte multilenguaje
 - 🟨 Añadir dashboard para administrar la web
