@@ -71,6 +71,7 @@ El sistema actualmente soporta las siguientes funcionalidades:
 - 🟩 Trackeo de Pedidos por Nro Orden
 - 🟩 Carrito de compras
 - 🟩 Implementación de LocalStorage para guardar el carrito, total y cantidad
+- 🟩 Implementación Login, Registro Manual y Auth de Google
 
 ## Futuras Actualizaciones
 
