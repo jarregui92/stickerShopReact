@@ -5,6 +5,7 @@ import { useContext } from "react";
 
 const Cart = () => {
     const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
+
     return (
         <>
 
@@ -12,7 +13,7 @@ const Cart = () => {
                 <h1 className="mb-10 text-center text-2xl font-bold">Su Carrito</h1>
                 <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
 
-                    {cantidadTotal === 0 ?
+                    {carrito.length === 0 ?
                         <div className="rounded-lg md:w-2/3">
                             <h2 className="text-lg font-bold">No hay productos en el carrito...</h2> <Link to="/">
                                 <button

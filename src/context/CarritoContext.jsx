@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 export const CarritoContext = createContext({
     carrito: [],
@@ -6,10 +6,14 @@ export const CarritoContext = createContext({
     cantidadTotal: 0
 })
 
+const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];
+const cantidadTotalInicial = parseInt(JSON.parse(localStorage.getItem("cantidadTotal"))) || [];
+const totalInicial = parseInt(JSON.parse(localStorage.getItem("total"))) || [];
+
 export const CarritoProvider = ({ children }) => {
-    const [carrito, setCarrito] = useState([]);
-    const [total, setTotal] = useState(0);
-    const [cantidadTotal, setCantidadTotal] = useState(0);
+    const [carrito, setCarrito] = useState(carritoInicial);
+    const [total, setTotal] = useState(totalInicial);
+    const [cantidadTotal, setCantidadTotal] = useState(cantidadTotalInicial);
 
     //Función agregar producto al carrito: 
     const agregarAlCarrito = (item, cantidad) => {
@@ -49,7 +53,11 @@ export const CarritoProvider = ({ children }) => {
         setCantidadTotal(0);
     }
 
-
+    useEffect(() => {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        localStorage.setItem("cantidadTotal", JSON.stringify(cantidadTotal));
+        localStorage.setItem("total", JSON.stringify(total));
+    }, [carrito])
     return (
         <CarritoContext.Provider value={{ carrito, total, cantidadTotal, agregarAlCarrito, eliminarProducto, vaciarCarrito }}> {children} </CarritoContext.Provider>
     )
