@@ -5,15 +5,13 @@ import { useContext } from 'react'
 const CartWidget = () => {
 
   const {cantidadTotal, total } = useContext(CarritoContext)
-
+  console.log(cantidadTotal , total)
   return (
     <div className='flex pr-4'>
       <div className=''>
         <ShoppingCartIcon className="w-7 h-7 " />
       </div>
-      <p className='text-lg '>
-        ${total} <span className='text-sm' >({cantidadTotal})</span>
-      </p>
+      {cantidadTotal > 0  && <p className='text-lg '> ${total} <span className='text-sm' >({cantidadTotal})</span></p> }
     </div>
 
   )
