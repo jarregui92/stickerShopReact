@@ -158,7 +158,7 @@ const CheckOut = () => {
                                         <fieldset className="mb-3 bg-white shadow-lg rounded text-gray-600">
                                             <label htmlFor="nombre" className="flex border-b border-gray-200 h-12 py-3 items-center">
                                                 <span className="text-right px-2">Nombre</span>
-                                                <input name="nombre" className="focus:outline-none px-3 flex-grow" placeholder="Try Odinsson" required="" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                                                <input name="nombre" className="focus:outline-none px-3 flex-grow" placeholder="Julian Arregui" required="" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
                                             </label>
                                             <label htmlFor="telefono" className="flex border-b border-gray-200 h-12 py-3 items-center">
                                                 <span className="text-right px-2">Teléfono</span>
