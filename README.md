@@ -72,10 +72,10 @@ El sistema actualmente soporta las siguientes funcionalidades:
 - 🟩 Carrito de compras
 - 🟩 Implementación de LocalStorage para guardar el carrito, total y cantidad
 - 🟩 Implementación Login, Registro Manual y Auth de Google
-
+- 🟩 Menu Hambugruesa para dispositivos Mobiles
 ## Futuras Actualizaciones
 
-Estamos trabajando en las siguientes mejoras y funcionalidades:
+Estamos trabajando en futuras mejoras y funcionalidades:
 
 - 🟨 Mejoras en la interfaz de usuario para dispositivos móviles
 - 🟨 Añadir soporte multilenguaje
