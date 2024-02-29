@@ -46,7 +46,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className='flex md:hidden'>
-                        <button className='text-white inline-flex items-center' onClick={() => { handleToggle(open) }}>
+                        <button className='dark:text-white text-black inline-flex items-center' onClick={() => { handleToggle(open) }}>
                             {open ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
                         </button>
                     </div>
@@ -56,13 +56,13 @@ const NavBar = () => {
                     <div className='md:hidden'>
                         <div className='ox-2 pt-2 pb-3 space-y-1 sm:px-3'>
                             <ul className=" dark:text-white dark:border-gray-700">
-                                <li className='flex justify-center items-center my-2 hover:bg-gray-700' >
+                                <li className='flex justify-center items-center my-2' >
                                     <NavLink to="/categoria/free">Free</NavLink>
                                 </li>
-                                <li className='flex justify-center items-center my-2 hover:bg-gray-700' >
+                                <li className='flex justify-center items-center my-2' >
                                     <NavLink to="/categoria/premium">Premium</NavLink>
                                 </li>
-                                <li className='flex justify-center items-center my-2 hover:bg-gray-700' >
+                                <li className='flex justify-center items-center my-2' >
                                     <NavLink to="/orders">Rastreo</NavLink>
                                 </li>
                                 <li className="flex flex-col justify-center items-center ">

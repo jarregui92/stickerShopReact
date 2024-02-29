@@ -58,17 +58,17 @@ const ItemDetail = ({ id, nombre, stock, precio, img, rate, moneda }) => {
                       <Link to="/cart">
                         <p className="text-md mb-2 font-bold text-white">Agregado al carrito</p>
                       <button
-                        className="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
+                        className="flex items-center justify-center w-full p-4 text-white border border-pink-600 bg-pink-500 rounded-md  hover:bg-pink-500  hover:text-gray-100">
                         Terminar compra
                       </button>
                       </Link>
                     ) : (
                       stock == 0 ? (
                        <>
-                        <p className="text-md mb-2 font-bold">No hay stock disponible</p>
+                        <p className="text-md mb-2 font-bold text-white">No hay stock disponible</p>
                         <Link to="/">
                         <button
-                          className="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
+                          className="flex items-center justify-center w-full p-4 text-white border border-pink-600 bg-pink-500 rounded-md  hover:bg-pink-500  hover:text-gray-100">
                           Seguir Comprando
                         </button>
                         </Link>

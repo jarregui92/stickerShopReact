@@ -17,7 +17,7 @@ const Cart = () => {
                         <div className="rounded-lg md:w-2/3">
                             <h2 className="text-lg font-bold">No hay productos en el carrito...</h2> <Link to="/">
                                 <button
-                                    className="mt-6 flex items-center justify-center w-full py-1.5 text-white border border-blue-500 rounded-md bg-blue-500 hover:bg-blue-00">
+                                    className="mt-6 flex items-center justify-center w-full py-1.5 text-white border border-pink-500 rounded-md bg-pink-300 hover:bg-pink-400">
                                     Ver Productos
                                 </button>
                             </Link>
