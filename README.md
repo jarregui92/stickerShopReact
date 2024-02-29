@@ -80,7 +80,7 @@ Estamos trabajando en futuras mejoras y funcionalidades:
 - 🟨 Mejoras en la interfaz de usuario para dispositivos móviles
 - 🟨 Añadir soporte multilenguaje
 - 🟨 Añadir dashboard para administrar la web
-
+- 🟨 Envio de confirmacion de compra con numero de orden
 
 <!-- CONTACT -->
 ## Contacto
