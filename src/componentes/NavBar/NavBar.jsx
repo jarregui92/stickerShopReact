@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const NavBar = () => {
 
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const handleToggle = () => { setOpen(!open) };
 
